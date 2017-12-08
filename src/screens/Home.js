@@ -1,20 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { View, Text, KeyboardAvoidingView } from 'react-native'
+import { View } from 'react-native'
 import MealList from '../components/MealList'
 import Button from '../components/Button'
-import AddNewMealForm from '../components/AddNewMealForm'
-import { addMeal } from '../redux/mealsRedux'
 import { openAddMealScreen } from '../lib/NavigationHelpers'
-import { Camera } from 'expo'
-class Home extends React.Component {
-  addNewMeal = ({mealName, mealPhoto}) => {
-    this.props.addMeal({
-      mealName,
-      mealPhoto
-    })
-  }
 
+class Home extends React.Component {
   render () {
     return (
       <View style={{flex: 1}}>
@@ -29,9 +20,4 @@ const mapStateToProps = state => ({
   meals: state.meals
 })
 
-const mapDispatchToProps = {
-  addMeal: addMeal
-}
-
-
-export default connect (mapStateToProps, mapDispatchToProps)(Home)
+export default connect(mapStateToProps)(Home)

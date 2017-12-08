@@ -1,13 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Camera } from 'expo'
-import { View, Text } from 'react-native'
-import MealList from '../components/MealList'
-import Button from '../components/Button'
-import AddNewMealForm from '../components/AddNewMealForm'
+import { View } from 'react-native'
 import { addMeal } from '../redux/mealsRedux'
 import { openHomeScreen } from '../lib/NavigationHelpers'
-
 
 class AddMealScreen extends React.Component {
 
@@ -19,9 +14,6 @@ class AddMealScreen extends React.Component {
   render () {
     return (
       <View style={{flex: 1}}>
-        <AddNewMealForm 
-          addNewMeal={this.addNewMeal}
-        />
       </View>
     )
   }
